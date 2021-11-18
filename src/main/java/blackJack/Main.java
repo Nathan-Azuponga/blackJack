@@ -1,16 +1,29 @@
 package blackJack;
 
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!!");
+
+        var playerList = List.of(
+                new Player("Player 1"),
+                new Player("Player 1"),
+                new Player("Player 1")
+        );
 
         var deck = new Deck();
-        System.out.println(deck.getCardStack().peek());
-        deck.shuffle();
-        System.out.println(deck.getCardStack().peek());
+        System.out.println(deck.getCardStack());
 
+        var blackJack = new BlackJackGame(deck);
 
-//        System.out.println(deck.getCardList().get(0));
-        //System.out.println(de);
+        try {
+            var result = args.length == 1 ? Integer.parseInt(args[0]) : 3;
+            if (result < 0 || result > 6)
+                throw new IllegalArgumentException();
+        } catch (Exception e) {
+
+            System.out.println("Exception throw");
+        }
+
     }
 }
