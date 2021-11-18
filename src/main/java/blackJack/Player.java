@@ -19,4 +19,8 @@ public class Player {
     public String toString() {
         return "name";
     }
+
+    public String getName() {
+        return name;
+    }
 }
