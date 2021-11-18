@@ -1,6 +1,7 @@
 package blackJack;
 
 import java.util.Collections;
+import java.util.List;
 import java.util.Stack;
 
 public class Deck {
@@ -28,6 +29,11 @@ public class Deck {
 
     public void shuffle() {
         Collections.shuffle(cardStack);
+    }
+    public void deal(List<Player> playerList){
+        for(Player player : playerList){
+
+        }
     }
 
     @Override

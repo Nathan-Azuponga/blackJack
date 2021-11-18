@@ -2,7 +2,6 @@ package blackJack;
 
 public class Card {
     private Rank rank;
-    //private int value;
     private Suit suit;
 
     public Card(Rank rank, Suit suit) {
@@ -14,16 +13,8 @@ public class Card {
         return rank;
     }
 
-    public void setRank(Rank rank) {
-        this.rank = rank;
-    }
-
     public Suit getSuit() {
         return suit;
-    }
-
-    public void setSuit(Suit suit) {
-        this.suit = suit;
     }
 
     @Override
