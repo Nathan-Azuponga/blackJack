@@ -1,26 +1,43 @@
 package blackJack;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Player {
-    private String name;
-    private List<Card> hand;
+    private static int playerCount = 1;
 
-    public Player(String name) {
-        this.name = name;
-        hand = new ArrayList<>();
+    private String name;
+    private final Strategy strategy;
+
+    public void setPlayerStatus(PlayerStatus playerStatus) {
+        this.playerStatus = playerStatus;
     }
 
-    public void addCards(Card card) {
-        hand.add(card);
+    public PlayerStatus getPlayerStatus() {
+        return playerStatus;
+    }
+
+    private PlayerStatus playerStatus;
+
+    public Player(String name, Strategy strategy) {
+        this.name = name;
+        playerStatus = PlayerStatus.IN_GAME;
+        this.strategy = strategy;
+        playerCount++;
+//        hand = new ArrayList<>();
+    }
+
+
+    public static int getPlayerCount() {
+        return playerCount;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public String toString() {
         return "name";
     }
 
-    public String getName() {
-        return name;
+    public Strategy getStrategy() {
+        return strategy;
     }
 }
